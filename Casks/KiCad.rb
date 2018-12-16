@@ -1,4 +1,4 @@
-cask 'kicad' do
+cask 'KiCad' do
   version '5.0.1'
   sha256 '3066e7c8da09afea2e27b4dc5d0742c83c5a2e93408d9d76e342e14e594bc7b3'
 
@@ -7,15 +7,15 @@ cask 'kicad' do
   name 'KiCad'
   homepage 'http://kicad-pcb.org/'
 
-  suite 'Kicad-apps', target: 'Kicad'
-  artifact 'kicad', target: '/Library/Application Support/kicad'
+  suite 'KiCad-apps', target: 'KiCad'
+  artifact 'KiCad', target: '/Library/Application Support/KiCad'
 
   preflight do
     FileUtils.cd staged_path do
-      FileUtils.mkdir 'Kicad-apps'
-      FileUtils.mv Dir.glob('Kicad/*.app'), 'Kicad-apps'
+      FileUtils.mkdir 'KiCad-apps'
+      FileUtils.mv Dir.glob('KiCad/*.app'), 'KiCad-apps'
     end
   end
 
-  zap trash: '~/Library/Preferences/kicad'
+  zap trash: '~/Library/Preferences/KiCad'
 end
